@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm360</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a>
+    <a href="{{ url_for('market_price') }}">Market Price</a>
+    <a href="{{ url_for('disease_prediction') }}">Plant Disease</a>
+    <a href="{{ url_for('suggest_fertilizers') }}">Suggest Fertilizers</a>
+    <a href="{{ url_for('disease_info') }}">Disease Info</a>
+    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+    <a href="{{ url_for('blogs') }}">Blogs</a>
+    <a href="{{ url_for('contact_us') }}">Contact Us</a>
+    
+        </nav>
+        <h1>Fertilizers for Plant Diseases</h1>
+        
+    </header>
+
+    <main>
+        <div class="fertilizer-grid">
+            <!-- Fertilizer 1 -->
+            <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/1.webp') }}" alt="Fertilizer 1">
+                <h3>Fertilizer A</h3>
+                <p>Effective against Blight.</p>
+            </div>
+            <!-- Fertilizer 8 -->
+            <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/8.jpg') }}" alt="Fertilizer 8">
+                <h3>Fertilizer B</h3>
+                <p>Treats Gray Leaf Spot.</p>
+            </div>
+             <!-- Fertilizer 3 -->
+             <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/3.webp') }}" alt="Fertilizer 3">
+                <h3>Fertilizer C</h3>
+                <p>Enhances plant health.</p>
+            </div>
+            
+             <!-- Fertilizer 5 -->
+             <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/5.jpg') }}" alt="Fertilizer 5">
+                <h3>Fertilizer D</h3>
+                <p>Effective against Blight.</p>
+            </div>
+             <!-- Fertilizer 6 -->
+             <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/9.webp') }}" alt="Fertilizer 6">
+                <h3>Fertilizer E</h3>
+                <p>Prevents Common Rust.</p>
+            </div>
+            <!-- Fertilizer 2 -->
+            <div class="fertilizer-card">
+                <img src= "{{ url_for('static', filename='images/2.jpg') }}" alt="Fertilizer 2">
+                <h3>Fertilizer F</h3>
+                <p>Prevents Common Rust.</p>
+            </div>
+           
+            <!-- Fertilizer 4 -->
+            <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/4.webp') }}" alt="Fertilizer 4">
+                <h3>Fertilizer G</h3>
+                <p>Treats Gray Leaf Spot.</p>
+            </div>
+           
+           
+            <!-- Fertilizer 7 -->
+            <div class="fertilizer-card">
+                <img src="{{ url_for('static', filename='images/7.jpg') }}" alt="Fertilizer 7">
+                <h3>Fertilizer H</h3>
+                <p>Enhances plant health.</p>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Plant Disease Predictor. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

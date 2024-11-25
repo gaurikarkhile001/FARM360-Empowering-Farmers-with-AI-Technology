@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm360</title>
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Link to your existing CSS -->
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+<a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a>
+<a href="{{ url_for('market_price') }}">Market Price</a>
+<a href="{{ url_for('disease_prediction') }}">Plant Disease</a>
+<a href="{{ url_for('suggest_fertilizers') }}">Suggest Fertilizers</a>
+<a href="{{ url_for('disease_info') }}">Disease Info</a>
+<a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+<a href="{{ url_for('blogs') }}">Blogs</a>
+<a href="{{ url_for('contact_us') }}">Contact Us</a>
+
+    </nav>
+    <h1>Farmers' Stories: Overcoming Plant Diseases with Syngenta Fertilizers</h1>
+    
+</header>
+
+<main>
+    <div class="farmer-story">
+        <div class="farmer-photo">
+            <img src="{{ url_for('static', filename='images/F1.webp') }}" alt="Farmer 1">
+        </div>
+        <div class="story-content">
+            <h2>Tanaji Shinde</h2>
+            <p><strong>Location:</strong> Jamgoan</p>
+            <p><strong>Product Review:</strong> "Syngenta’s fertilizer has been a game changer for us. After battling Blight for years, the targeted treatment worked wonders in just one season."</p>
+            <p><strong>How I Overcame the Disease:</strong> "By applying Syngenta’s fertilizer at the right growth stages, we managed to control the Blight disease, and our crop yield has significantly increased."</p>
+        </div>
+    </div>
+
+    <div class="farmer-story">
+        <div class="farmer-photo">
+            <img src="{{ url_for('static', filename='images/F2.jpg') }}" alt="Farmer 2">
+        </div>
+        <div class="story-content">
+            <h2>Sopan Patil</h2>
+            <p><strong>Location:</strong> Ralegan Therpal</p>
+            <p><strong>Product Review:</strong> "Syngenta fertilizers not only nourished our plants but also helped us fight off Common Rust effectively. Highly recommended!"</p>
+            <p><strong>How I Overcame the Disease:</strong> "With regular applications and proper guidance from Syngenta, we restored our crops to their healthy state without the rust issue." </p>
+        </div>
+    </div>
+
+    <div class="farmer-story">
+        <div class="farmer-photo">
+            <img src="{{ url_for('static', filename='images/F3.jpg') }}" alt="Farmer 3">
+        </div>
+        <div class="story-content">
+            <h2>Pandurang Bhagat</h2>
+            <p><strong>Location:</strong> Sakharwadi</p>
+            <p><strong>Product Review:</strong> "We had a severe issue with plant health, but Syngenta's fertilizers brought our crops back to life. They truly care about farmers!"</p>
+            <p><strong>How I Overcame the Disease:</strong> "By using the right fertilizer mix tailored for our soil, we not only avoided diseases like Gray Leaf Spot but also ensured our plants were healthier than ever." </p>
+        </div>
+    </div>
+
+    <div class="farmer-story">
+        <div class="farmer-photo">
+            <img src="{{ url_for('static', filename='images/F4.jpg') }}" alt="Farmer 4">
+        </div>
+        <div class="story-content">
+            <h2>Mahadev Sukte</h2>
+            <p><strong>Location:</strong> Nighoj</p>
+            <p><strong>Product Review:</strong> "The Syngenta fertilizer has been our go-to solution for preventing Gray Leaf Spot. It’s easy to apply and very effective!"</p>
+            <p><strong>How I Overcame the Disease:</strong> "After noticing the Gray Leaf Spot issue, I immediately contacted Syngenta, who recommended the perfect solution. With consistent use, the disease was kept under control." </p>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Plant Disease Predictor. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

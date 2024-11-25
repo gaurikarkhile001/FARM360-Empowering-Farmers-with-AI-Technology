@@ -1,0 +1,528 @@
+/*-------------------------------------HOME-----------------------------------*/
+/* Basic styles for the navbar */
+nav {
+    background-color: #4CAF50;
+    overflow: hidden;
+    position: relative; /* Enables precise positioning */
+    top: -10px; /* Moves the navbar upward */
+    z-index: 1000; /* Ensures it stays above other elements */
+    border-radius: 5px; /* Optional: Add rounded corners for a sleeker look */
+    width: 95vw;
+}
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #45a049;
+    color: white;
+}
+nav a.active {
+    background-color: #3e8e41;
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #4CAF50;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    margin: 10px 0 20px;
+    font-size: 1.2rem;
+}
+
+main {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px; /* Adjust the spacing between images */
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%; /* Full width of the grid item */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures uniform cropping */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+
+/* Form Styles */
+form {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 400px; /* Adjusted width */
+    min-height: 200px; /* Ensures a consistent height */
+    margin: 20px auto; /* Centers the form and adds space around it */
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+/* Adding margin to create space between label and input */
+.upload-section label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px; /* Creates distance between the label and input */
+    color: #4CAF50;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: none;
+    background: #333333;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px; /* Adjusted max-width */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+/* Output Section */
+#output {
+    margin-top: 30px;
+    padding: 20px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 400px; /* Adjusted width */
+    min-height: 200px; /* Ensures a consistent height */
+    margin: 30px auto; /* Adds space between form and output, centers the output box */
+}
+
+#output h2 {
+    margin-top: 0;
+    color: #4CAF50;
+}
+
+#uploaded-image {
+    margin-top: 20px;
+    max-width: 100%;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+}
+
+#prediction-text {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* Updated Styles for Fertilizer Page with Fixed Grid */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    padding: 40px;
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #4CAF50;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    margin: 10px 0 20px;
+    font-size: 1.2rem;
+}
+
+main {
+    margin: 20px auto;
+    padding: 0;
+    max-width: 1200px; /* Center content and limit width */
+}
+/*-------------------------------------FERTILIZER-----------------------------------*/
+.fertilizer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.fertilizer-card {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.fertilizer-card h3 {
+    color: #4CAF50;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.fertilizer-card p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #cccccc;
+}
+
+.fertilizer-card img {
+    width: 100%; /* Images will adjust to card width */
+    height: auto; /* Maintain original aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+    margin-bottom: 10px;
+}
+
+/*-------------------------------------BLOG-----------------------------------*/
+
+.farmer-story {
+    display: flex;
+    margin-bottom: 40px;
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.farmer-photo {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.farmer-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.story-content {
+    flex: 2;
+    text-align: left;
+}
+
+.story-content h2 {
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #cccccc;
+}
+
+
+/* Grid Layout for 4 diseases in one row */
+.disease-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Adds space between the grid items */
+    margin: 20px auto;
+    max-width: 100%; /* Full width */
+    padding: 0 10px; /* Optional: Adds some padding on the sides */
+}
+
+/* Each disease card */
+.disease-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%; /* Ensure card uses full available width */
+    max-width: 300px; /* Optional: Set a max width for cards */
+    margin: 10px; /* Adds space between the cards */
+}
+
+.disease-card h2 {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.disease-card p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #cccccc;
+}
+
+.disease-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/*-------------------------------------CONTACT US----------------------------------*/
+/* Contact Form and Developer Info */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;  /* The form takes up remaining space */
+    padding: 15px;  /* Reduced padding */
+    border-radius: 10px;
+    max-width: 500px; /* Sets a smaller maximum width */
+    margin: 0 auto; /* Center the form horizontally if space permits */
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block; /* Ensures label is on a new line */
+    color: #cccccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    padding: 8px;  /* Reduced padding */
+    margin-bottom: 15px;  /* Increased space between fields */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+
+/* Agriculture Image */
+.agriculture-image {
+    flex: 1;  /* The image takes up remaining space */
+    margin-top: 0;
+    text-align: center;
+}
+
+.agriculture-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Developed by Section */
+.developed-by {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.developed-by h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.developer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.developer-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.developer-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.developer-card h3 {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.developer-card p {
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+/*-------------------------------------FOOTER------------------------------------*/
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888888;
+    text-align: center;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #4CAF50;
+    text-align: center;
+}
+
+nav {
+    background-color: #4CAF50;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+nav a {
+    float: left;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #45a049;
+}
+
+nav a.active {
+    background-color: #3e8e41;
+}
+
+/* Option Grid */
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Option Cards */
+.option-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.option-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #4CAF50;
+    color: #ccc;
+    margin-top: 20px;
+}

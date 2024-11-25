@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm360</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <style>
+       
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #4CAF50;
+        }
+
+        form input {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background: #555;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            font-size: 1rem;
+        }
+
+        form input:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+
+        form button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a>
+    <a href="{{ url_for('market_price') }}">Market Price</a>
+    <a href="{{ url_for('disease_prediction') }}">Plant Disease</a>
+    <a href="{{ url_for('suggest_fertilizers') }}">Suggest Fertilizers</a>
+    <a href="{{ url_for('disease_info') }}">Disease Info</a>
+    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+    <a href="{{ url_for('blogs') }}">Blogs</a>
+    <a href="{{ url_for('contact_us') }}">Contact Us</a>
+    
+        </nav>
+        <!-- Header Content -->
+        <h1>Market Price Prediction System</h1>
+    </header>
+
+    <div class="container">
+        <form id="marketPriceForm">
+            <label for="cropType">Crop Type:</label>
+            <input type="text" id="cropType" name="cropType" required>
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="season">Season:</label>
+            <input type="text" id="season" name="season" required>
+
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plant Care Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // You can add some JavaScript for form handling and result display
+        document.getElementById('marketPriceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const cropType = document.getElementById('cropType').value;
+            const location = document.getElementById('location').value;
+            const season = document.getElementById('season').value;
+            const year = document.getElementById('year').value;
+            
+            // Simulate a price prediction result (in reality, you'd use an API or model)
+            const predictedPrice = (Math.random() * 1000).toFixed(2);
+
+            // Display result
+            const result = document.getElementById('result');
+            result.innerHTML = `<p>The predicted market price for ${cropType} in ${location} for the ${season} season of ${year} is <strong>$${predictedPrice}</strong></p>`;
+        });
+    </script>
+
+</body>
+</html>

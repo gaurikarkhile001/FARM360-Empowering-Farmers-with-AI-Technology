@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm360</title>
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Link to your external CSS -->
+</head>
+<body>
+<header>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+<a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a>
+<a href="{{ url_for('market_price') }}">Market Price</a>
+<a href="{{ url_for('disease_prediction') }}">Plant Disease</a>
+<a href="{{ url_for('suggest_fertilizers') }}">Suggest Fertilizers</a>
+<a href="{{ url_for('disease_info') }}">Disease Info</a>
+<a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+<a href="{{ url_for('blogs') }}">Blogs</a>
+<a href="{{ url_for('contact_us') }}">Contact Us</a>
+
+    </nav>
+    <header>
+        <h1>Plant Disease Prediction</h1>
+        
+    </header>
+
+    <main>
+        <p>Upload an image of a plant leaf to identify the disease.</p>
+        <form id="upload-form" action="/predict" method="post" enctype="multipart/form-data">
+            <div class="upload-section">
+                <label for="file-input">Choose an image:</label>
+                <input type="file" id="file-input" name="file" accept="image/*" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="output">
+            <h2>Uploaded Image:</h2>
+            <img id="uploaded-image" src="#" alt="Uploaded Image" style="display: none;">
+            <h2>Prediction:</h2>
+            <p id="prediction-text">Your prediction will appear here.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Plant Disease Predictor. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const uploadedImage = document.getElementById('uploaded-image');
+        const predictionText = document.getElementById('prediction-text');
+        const form = document.getElementById('upload-form');
+
+        // Display the uploaded image
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    uploadedImage.src = e.target.result;
+                    uploadedImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle the form submission and fetch prediction
+        form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch('/predict_plant_disease', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        
+        if (data.prediction) {
+            predictionText.textContent = `Prediction: ${data.prediction}`;
+        } else if (data.error) {
+            predictionText.textContent = `Error: ${data.error}`;
+        } else {
+            predictionText.textContent = 'Prediction failed. Please try again.';
+        }
+    } catch (error) {
+        predictionText.textContent = `Error: ${error.message}`;
+    }
+});
+
+    </script>
+</body>
+</html>

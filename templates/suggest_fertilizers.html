@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm360</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <style>
+        
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #4CAF50;
+        }
+
+        form input, form select {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background: #555;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            font-size: 1rem;
+        }
+
+        form input:focus, form select:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+
+        form button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+      
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a>
+    <a href="{{ url_for('market_price') }}">Market Price</a>
+    <a href="{{ url_for('disease_prediction') }}">Plant Disease</a>
+    <a href="{{ url_for('suggest_fertilizers') }}">Suggest Fertilizers</a>
+    <a href="{{ url_for('disease_info') }}">Disease Info</a>
+    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+    <a href="{{ url_for('blogs') }}">Blogs</a>
+    <a href="{{ url_for('contact_us') }}">Contact Us</a>
+    
+        </nav>
+        <!-- Header Content -->
+        <h1>Fertilizer Recommendation System</h1>
+    </header>
+
+    <div class="container">
+        <form id="fertilizerForm">
+            <label for="cropType">Crop Type:</label>
+            <input type="text" id="cropType" name="cropType" required>
+            
+            <label for="soilType">Soil Type:</label>
+            <select id="soilType" name="soilType" required>
+                <option value="loamy">Loamy</option>
+                <option value="sandy">Sandy</option>
+                <option value="clay">Clay</option>
+                <option value="saline">Saline</option>
+            </select>
+
+            <label for="phLevel">Soil pH Level:</label>
+            <input type="number" id="phLevel" name="phLevel" step="0.01" required>
+
+            <label for="climate">Climate:</label>
+            <select id="climate" name="climate" required>
+                <option value="tropical">Tropical</option>
+                <option value="temperate">Temperate</option>
+                <option value="arid">Arid</option>
+                <option value="coastal">Coastal</option>
+            </select>
+
+            <button type="submit">Suggest Fertilizers</button>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plant Care Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('fertilizerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const cropType = document.getElementById('cropType').value;
+            const soilType = document.getElementById('soilType').value;
+            const phLevel = document.getElementById('phLevel').value;
+            const climate = document.getElementById('climate').value;
+
+            // Simulate fertilizer recommendation (you can replace this with an actual API or model)
+            let recommendedFertilizers = '';
+            
+            if (cropType.toLowerCase() === 'tomato' && soilType === 'loamy' && phLevel >= 6.0 && phLevel <= 6.5) {
+                recommendedFertilizers = 'NPK 20-20-20, Urea';
+            } else if (cropType.toLowerCase() === 'wheat' && soilType === 'sandy' && phLevel >= 5.5 && phLevel <= 6.5) {
+                recommendedFertilizers = 'DAP, Potassium Chloride';
+            } else {
+                recommendedFertilizers = 'We recommend further consultation with an expert for personalized fertilizer suggestions.';
+            }
+
+            // Display result
+            const result = document.getElementById('result');
+            result.innerHTML = `<p>Recommended fertilizers for ${cropType} (Soil: ${soilType}, pH: ${phLevel}, Climate: ${climate}):</p><p><strong>${recommendedFertilizers}</strong></p>`;
+        });
+    </script>
+
+</body>
+</html>
