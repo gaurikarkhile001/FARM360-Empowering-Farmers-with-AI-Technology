@@ -27,11 +27,11 @@ FARM360 is an AI-powered platform designed to empower farmers with intelligent s
 ### Docker Image  
 This project is containerized using Docker for portability and scalability.  
 The Docker image is publicly available on Docker Hub:  
-**[Your Docker Hub Repository](https://hub.docker.com/u/gaurikarkhile)**
+**[https://hub.docker.com/u/gaurikarkhile](https://hub.docker.com/u/gaurikarkhile)**
 
 ### Deployment on AWS EC2  
 FARM360 is deployed on an AWS EC2 instance for high availability and scalability.  
-You can access the platform at: **[Your EC2 Public IP/Domain](http://your-ec2-public-ip)**
+You can access the platform at: **[(http://your-ec2-public-ip)](http://your-ec2-public-ip)**
 
 ---
 
@@ -80,12 +80,11 @@ You can access the platform at: **[Your EC2 Public IP/Domain](http://your-ec2-pu
 
 ## Technologies Used 🛠️
 
-- **Backend:** Python (Flask/Django)  
+- **Backend:** Python (Flask)  
 - **Frontend:** HTML, CSS, JavaScript  
-- **AI Models:** TensorFlow/PyTorch, Scikit-learn  
+- **AI Models:** TensorFlow, Scikit-learn  
 - **Containerization:** Docker  
 - **Cloud:** AWS EC2  
-- **Database:** PostgreSQL/MySQL  
 
 ---
 
@@ -131,5 +130,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any queries or support, please contact:  
 **Gauri Karkhile**  
-- **Email:** [gauri@example.com](mailto:gaurikarkhile1@gmail.com)  
+- **Email:** [gaurikarkhile1@gmail.com](mailto:gaurikarkhile1@gmail.com)  
 ```
