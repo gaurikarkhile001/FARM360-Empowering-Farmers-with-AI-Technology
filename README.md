@@ -1,5 +1,5 @@
 
-```markdown
+
 # FARM360 - Empowering Farmers with AI Technology 🌾
 
 FARM360 is an AI-powered platform designed to empower farmers with intelligent solutions to enhance agricultural productivity and decision-making. The platform integrates cutting-edge AI and IoT technologies to provide actionable insights and recommendations, helping farmers make informed choices about their crops, fertilizers, and market strategies.
